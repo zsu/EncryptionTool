@@ -10,4 +10,8 @@
     <PackageReference Include="NETCore.Encrypt" Version="2.0.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="publish\win-x64\" />
+  </ItemGroup>
+
 </Project>
