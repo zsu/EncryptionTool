@@ -1,6 +1,7 @@
-﻿using NETCore.Encrypt;
+﻿using NetApp.Common;
 using System;
 using System.Collections.Generic;
+using System.IO.Packaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,17 +30,16 @@ namespace EncryptionTool
 
         private void btnEncrypt_Click(object sender, RoutedEventArgs e)
         {
+            var options = new EncryptionOptions { Key = txtKey.Text.Trim(), Iv = txtIV.Text.Trim() };
+            var encryptionService = new EncryptionService(options);
             if (string.IsNullOrWhiteSpace(txtKey.Text))
             {
-                MessageBox.Show(this,"Key is required.");
+                MessageBox.Show(this, "Key is required.");
                 return;
             }
             try
             {
-                if (string.IsNullOrWhiteSpace(txtIV.Text))
-                    txtResult.Text = EncryptProvider.AESEncrypt(txtValue.Text.Trim(), txtKey.Text.Trim());
-                else
-                    txtResult.Text = EncryptProvider.AESEncrypt(txtValue.Text.Trim(), txtKey.Text.Trim(), txtIV.Text.Trim());
+                txtResult.Text = encryptionService.Encrypt(txtValue.Text.Trim());
             }
             catch (Exception ex)
             {
@@ -49,6 +49,8 @@ namespace EncryptionTool
 
         private void btnDecrypt_Click(object sender, RoutedEventArgs e)
         {
+            var options = new EncryptionOptions { Key = txtKey.Text.Trim(), Iv = txtIV.Text.Trim() };
+            var encryptionService = new EncryptionService(options);
             if (string.IsNullOrWhiteSpace(txtKey.Text))
             {
                 MessageBox.Show("Key is required.");
@@ -56,10 +58,7 @@ namespace EncryptionTool
             }
             try
             {
-                if (string.IsNullOrWhiteSpace(txtIV.Text))
-                    txtResult.Text = EncryptProvider.AESDecrypt(txtValue.Text.Trim(), txtKey.Text.Trim());
-                else
-                    txtResult.Text = EncryptProvider.AESDecrypt(txtValue.Text.Trim(), txtKey.Text.Trim(), txtIV.Text.Trim());
+                txtResult.Text = encryptionService.Decrypt(txtValue.Text.Trim());
             }
             catch (Exception ex)
             {
