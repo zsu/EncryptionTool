@@ -44,6 +44,7 @@ packages
 [Rr]elease/
 [Bb]uild/
 [Ll]ogs/
+[Pp]ublish/
 .nuget/
 .vs/
 *.suo
