@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <PackageReference Include="NetApp.Common" Version="4.3.0" />
-    <PackageReference Include="NETCore.Encrypt" Version="2.0.9" />
   </ItemGroup>
 
 </Project>
