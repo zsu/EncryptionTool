@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="NetApp.Common" Version="4.3.0" />
+    <PackageReference Include="NetApp.Common" Version="4.4.0" />
   </ItemGroup>
 
 </Project>
