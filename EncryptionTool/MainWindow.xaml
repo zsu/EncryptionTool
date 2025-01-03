@@ -25,8 +25,6 @@
         </Grid.RowDefinitions>
         <Label Content="Key: " HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1" Margin="10"/>
         <TextBox x:Name="txtKey"  Text="" TextWrapping="Wrap" Grid.Column="2" Grid.Row="1" Margin="10" />
-        <Label Content="IV: " HorizontalAlignment="Right" Grid.Column="1" Grid.Row="2" Margin="10"/>
-        <TextBox x:Name="txtIV" Text="" TextWrapping="Wrap" Grid.Column="2" Grid.Row="2" Margin="10"/>
         <Label Content="Value: " HorizontalAlignment="Right" Grid.Column="1" Grid.Row="3" Margin="10"/>
         <TextBox x:Name="txtValue"  TextWrapping="Wrap" Grid.Column="2" Grid.Row="3" Margin="10" AcceptsReturn="True" AcceptsTab="True"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5" Grid.Column="2" Grid.Row="4">

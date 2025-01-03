@@ -30,8 +30,8 @@ namespace EncryptionTool
 
         private void btnEncrypt_Click(object sender, RoutedEventArgs e)
         {
-            var options = new EncryptionOptions { Key = txtKey.Text.Trim(), Iv = txtIV.Text.Trim() };
-            var encryptionService = new EncryptionService(options);
+            var key = txtKey.Text.Trim();
+            var encryptionService = new EncryptionService(key);
             if (string.IsNullOrWhiteSpace(txtKey.Text))
             {
                 MessageBox.Show(this, "Key is required.");
@@ -49,8 +49,8 @@ namespace EncryptionTool
 
         private void btnDecrypt_Click(object sender, RoutedEventArgs e)
         {
-            var options = new EncryptionOptions { Key = txtKey.Text.Trim(), Iv = txtIV.Text.Trim() };
-            var encryptionService = new EncryptionService(options);
+            var key = txtKey.Text.Trim();
+            var encryptionService = new EncryptionService(key);
             if (string.IsNullOrWhiteSpace(txtKey.Text))
             {
                 MessageBox.Show("Key is required.");
